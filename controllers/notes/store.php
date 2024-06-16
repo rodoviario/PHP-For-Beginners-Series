@@ -13,10 +13,9 @@ if (! Validator::string($_POST['body'], 1, 1000)) {
 }
 
 if (! empty($errors)) {
-    // validation issue
-    return view("notes/index.view.php", [
-        'heading' => 'My Notes',
-        'notes' => $notes
+    return view("notes/create.view.php", [
+        'heading' => 'Create Note',
+        'errors' => $errors
     ]);
 }
 
@@ -27,4 +26,3 @@ $db->query('INSERT INTO notes(body, user_id) VALUES(:body, :user_id)', [
 
 header('location: /notes');
 die();
-
