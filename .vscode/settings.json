@@ -1,0 +1,17 @@
+{
+    "explorer.confirmDragAndDrop": false,
+    "intelephense.files.associations": [
+        "*.php",
+        "*.phtml",
+        "*.module"
+    ],
+    "liveServer.settings.NoBrowser": false,
+    "liveServer.settings.fullReload": false,
+    "liveServer.settings.donotVerifyTags": true,
+    "liveServer.settings.useWebExt": true,
+    "liveServer.settings.wait": 100,
+    "liveServer.settings.ChromeDebuggingAttachment": false,
+    "liveServer.settings.proxy": {
+        "baseUri": "/"
+    }
+}

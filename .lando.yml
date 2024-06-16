@@ -1,0 +1,12 @@
+name: php-for-beginners
+recipe: lamp
+config:
+  php: '8.2'
+  database: mysql:5.7
+  xdebug: true
+  webroot: ./public
+services:
+  myservice:
+    type: phpmyadmin
+  database:
+    portforward: 3306
