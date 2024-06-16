@@ -8,4 +8,4 @@ $router->get('/notes', 'controllers/notes/index.php');
 $router->get('/note', 'controllers/notes/show.php');
 $router->get('/notes/create', 'controllers/notes/create.php');
 
-$router->delete('/note', 'controller/notes/destroy.php');
+// $router->delete('/note', 'controller/notes/destroy.php');

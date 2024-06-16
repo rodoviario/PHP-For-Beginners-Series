@@ -2,16 +2,13 @@
 
 namespace Core;
 
+// este cambio es lo contrario a explode
 class Router {
     protected $routes = [];
 
     public function add($method, $uri, $controller)
     {
-        $this->routes[] = [
-            'uri' => $uri,
-            'controller' => $controller,
-            'method' => $method
-        ];
+        $this->routes[] = compact('method', 'uri', 'controller');
     }
     
     public function get($uri, $controller)
