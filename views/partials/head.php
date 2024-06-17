@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Demo</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
-    <meta http-equiv="refresh" content="10" >
+    <meta http-equiv="refresh" content="15" >
 </head>
 
 <body class="h-full">
