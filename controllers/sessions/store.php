@@ -24,27 +24,19 @@ if (! empty($errors)) {
     ]);
 }
 
-// log in the user if the credentials match
 $user = $db->query('select * from users where email = :email', [
     'email' => $email
 ])->find();
 
-if (! $user) {
-    return view('sessions/create.view.php', [
-        'errors' => [
-            'email' => 'No matching account for that email address.'
-        ]
-    ]);
-}
-
-// we have the user but we don't know if the password provided matches in the db
-if (password_verify($password, $user['password'])) {
-    login([
-        'email' => $email
-    ]);
-
-    header('location: /');
-    exit();
+if ($user) {
+    if (password_verify($password, $user['password'])) {
+        login([
+            'email' => $email
+        ]);
+    
+        header('location: /');
+        exit();
+    }
 }
 
 return view('sessions/create.view.php', [
