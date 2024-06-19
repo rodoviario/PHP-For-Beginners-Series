@@ -1,7 +1,7 @@
 <?php
 
 use Core\Authenticator;
-use Core\session;
+use Core\Session;
 use Http\Forms\LoginForm;
 
 $email = $_POST['email'];
