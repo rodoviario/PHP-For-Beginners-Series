@@ -7,8 +7,6 @@ use Core\Validator;
 
 class LoginForm
 {
-    // lo de abajo es equivalente a declararlo dentro del __construct
-    // public $attributes;
     protected $errors = [];
 
     public function __construct(public array $attributes)
@@ -16,11 +14,10 @@ class LoginForm
         if (!Validator::email($attributes['email'])) {
             $this->errors['email'] = 'Please provide a valid email address.';
         }
-    
+
         if (!Validator::string($attributes['password'])) {
             $this->errors['password'] = 'Please provide a valid password.';
         }
-
     }
 
     public static function validate($attributes)
@@ -29,18 +26,17 @@ class LoginForm
 
         return $instance->failed() ? $instance->throw() : $instance;
     }
-    
+
     public function throw()
     {
-        ValidationException::throw($this->errors(), $this)->$attributes;
+        ValidationException::throw($this->errors(), $this->attributes);
     }
-    
+
     public function failed()
     {
         return count($this->errors);
     }
 
-    // agregar un getter para sacar los errores si los hubiera
     public function errors()
     {
         return $this->errors;

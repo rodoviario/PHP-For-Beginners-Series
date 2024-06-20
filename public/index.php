@@ -33,3 +33,8 @@ try {
 }
 
 Session::unflash();
+
+    return redirect($router->previousUrl());
+}
+
+Session::unflash();
