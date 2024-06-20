@@ -1,7 +1,6 @@
 <?php
 
 use Core\Authenticator;
-use Core\Session;
 use Http\Forms\LoginForm;
 
 $form = LoginForm::validate($attributes = [
@@ -9,17 +8,14 @@ $form = LoginForm::validate($attributes = [
     'password' => $_POST['password']
 ]);
 
+$signedIn = (new Authenticator)->attempt(
+    $attributes['email'], $attributes['password']
+);
 
-if ((new Authenticator)->attempt($attributes['email'], $attributes['password'])) {
-    redirect('/');
+if (!$signedIn) {
+    $form->error(
+        'email', 'No matching account for that email address and password.'
+    )->throw();
 }
-
-$form->error('email', 'No matching account for that email address and password.');
-
-
-Session::flash('errors',$form->errors());
-Session::flash('old', [
-    'email' => $_POST['email']
-]);
-
-return redirect('login');
+    
+redirect('/');
