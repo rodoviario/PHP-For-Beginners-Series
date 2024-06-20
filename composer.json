@@ -1,0 +1,16 @@
+{
+    "name": "www-data/app",
+    "authors": [
+        {
+            "name": "Rodolfo Guagnini",
+            "email": "rodolfo.guagnini@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core/",
+            "Http\\": "Http/"
+        }
+    }
+}
