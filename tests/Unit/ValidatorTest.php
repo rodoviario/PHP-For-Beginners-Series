@@ -26,4 +26,5 @@ it('validates a email', function () {
 // falla porque lafuncionalidad no existe todavía
 it('validates a number is greater than a given ammount', function () {
     expect(Validator::greaterThan(10, 1))->toBeTrue();
+    expect(Validator::greaterThan(10, 100))->toBeFalse();
 })->only();
