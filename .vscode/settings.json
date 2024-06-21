@@ -5,13 +5,31 @@
         "*.phtml",
         "*.module"
     ],
-    "liveServer.settings.NoBrowser": false,
-    "liveServer.settings.fullReload": false,
-    "liveServer.settings.donotVerifyTags": true,
-    "liveServer.settings.useWebExt": true,
-    "liveServer.settings.wait": 100,
-    "liveServer.settings.ChromeDebuggingAttachment": false,
-    "liveServer.settings.proxy": {
-        "baseUri": "/"
-    }
+    "terminal.integrated.defaultProfile.linux": "lando-php",
+    "terminal.integrated.profiles.linux": {
+
+        "bash": {
+            "path": "bash",
+            "icon": "terminal-bash"
+        },
+        "zsh": {
+            "path": "zsh"
+        },
+        "fish": {
+            "path": "fish"
+        },
+        "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux"
+        },
+        "pwsh": {
+            "path": "pwsh",
+            "icon": "terminal-powershell"
+        }
+    },
+    "terminal.integrated.enableVisualBell": true,
+    "terminal.integrated.shellIntegration.history": 1000,
+    "terminal.integrated.stickyScroll.enabled": true,
+    "terminal.integrated.windowsEnableConpty": false,
+    "terminal.integrated.useWslProfiles": false
 }

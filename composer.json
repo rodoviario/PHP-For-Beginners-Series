@@ -6,11 +6,21 @@
             "email": "rodolfo.guagnini@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "illuminate/collections": "^11.11"
+    },
     "autoload": {
         "psr-4": {
             "Core\\": "Core/",
             "Http\\": "Http/"
         }
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "require-dev": {
+        "pestphp/pest": "^2.34"
     }
 }
